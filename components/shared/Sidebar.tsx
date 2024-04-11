@@ -15,17 +15,14 @@ const Sidebar = () => {
               <nav className="sidebar-nav">
                   <SignedIn>
                       <ul className="sidebar-nav_elements">
-                          {navLinks.map(link) => {
-                              return (
-                              <li key={link.route}>
-                                  <Link className="sidebar-link" href={link.route}>
-                                      <a className="sidebar-nav_element">
-                                          <Image src={link.icon} alt={link.label} width={24} height={24} />
-                                          <span>{link.label}</span>
-                                      </a>
-                                  </Link>
-                              </li>
-                          )}}
+                            {navLinks.map((link) => (
+                                <li key={link.label} className="sidebar-nav_element">
+                                    <Link href={link.route}>
+                                            <Image src={link.icon} alt={link.label} width={24} height={24} />
+                                            <span>{link.label}</span>
+                                    </Link>
+                                </li>
+                            ))}
                       </ul>
                   </SignedIn>
               </nav>
