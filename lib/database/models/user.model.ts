@@ -1,4 +1,4 @@
-"use server";
+// "use server";
 import { model, models, Schema } from 'mongoose';
 
 interface User extends Document {
