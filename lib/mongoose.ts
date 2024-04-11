@@ -22,6 +22,14 @@ export const connectToDatabase = async () => {
         return cached.conn;
     }
 
-    cached.promise = cached.promise || mongoose.connect(MONGODB_URL, { dbName: 'Imgainify', useNewUrlParser: true, useUnifiedTopology: true });
+    cached.promise =
+        cached.promise ||
+        mongoose.connect(MONGODB_URL, {
+            dbName: 'Imaginfy', bufferCommands: false
+        });
 
+    cached.conn = await cached.promise;
+
+
+    return cached.conn;
 }
